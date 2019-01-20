@@ -67,7 +67,7 @@ public class UserServiceImpl implements IUserService {
 				Util.isNull(req.getPassword())) {
 			throw new Exception("First name cannot be null for an user");
 		}
-		UserBean user =userDao.fetchUserByEmail(req.getUserName(), sessionFactory);
+		UserBean user =userDao.fetchUserByEmail(req.getUserName(), sessionFactory);		
 		if(!Util.isNull(user) && !Util.isNull(user.getSecretKey())){
 			return Util.decryptData(req.getPassword(), user.getSecretKey());
 		}
