@@ -50,6 +50,9 @@ public class UserServiceImpl implements IUserService {
 			user.setUpdatedTs(Util.getCurrentTimeStamp());
 			user.setIsDeleted(false);
 		}
+		if(!Util.isNull(user.getSecretKey()) && user.getSecretKey().length()>0){
+			user.setSecretKey(Util.encrpyData(user.getSecretKey()));	 
+		}
 		res.setUserBean(userDao.saveorUpdateUserDetails(user, sessionFactory));
 		return res;
 	}

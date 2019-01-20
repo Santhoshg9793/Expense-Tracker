@@ -6,15 +6,29 @@ package com;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import org.springframework.*;
+import org.springframework.beans.factory.BeanCurrentlyInCreationException;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 /**
  * @author Santhosh
  *
  */
 public class Util {
+	
+	/**
+	 * Method to check given object is null or not
+	 * @param obj
+	 * @return
+	 */
 	 public static boolean isNull(Object obj) {
 	        return null == obj ? true : false;
 	    }
+	 
+	 /**
+	  * Method to fetch current timestamp
+	  * @return
+	  */
 	  public static Timestamp getCurrentTimeStamp() {
 	        SimpleDateFormat timeStampFormat = new SimpleDateFormat(
 	                "yyyy-MM-dd HH:mm:ss.SSS");
@@ -24,4 +38,15 @@ public class Util {
 	        Timestamp ts = Timestamp.valueOf(timeStamp);
 	        return ts;
 	    }
+	  
+	  /**
+	   * Method to encrypt given string
+	   */
+	  public static String encrpyData(String str){
+		  String encrpytedStr=null;
+		  if(!Util.isNull(str) && str.length()>0){
+			  encrpytedStr= BCrypt.hashpw(str, BCrypt.gensalt()); 
+		  }
+		return encrpytedStr;
+	  }
 }
