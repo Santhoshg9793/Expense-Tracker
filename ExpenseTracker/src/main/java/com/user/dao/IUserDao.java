@@ -6,6 +6,7 @@ package com.user.dao;
 import org.hibernate.SessionFactory;
 
 import com.user.bean.UserBean;
+import com.user.request.UserAuthRequest;
 
 /**
  * @author Santhosh
@@ -20,4 +21,12 @@ public interface IUserDao {
 	 * @throws Exception 
 	 */
 	UserBean saveorUpdateUserDetails(UserBean userBean,SessionFactory sessionFactory) ;
+	
+	/**
+	 * Fetch UserBean based on primaryEmailId
+	 * @param req
+	 * @return
+	 * @throws Exception 
+	 */
+	UserBean fetchUserByEmail(String emailId,SessionFactory sessionFactory);
 }

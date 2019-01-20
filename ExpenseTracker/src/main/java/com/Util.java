@@ -49,4 +49,15 @@ public class Util {
 		  }
 		return encrpytedStr;
 	  }
+	  
+	  /**
+	   * Method to check whether encrypted data and given data is same or not
+	   */
+	  public static boolean decryptData(String currentStr,String encryptedStr){		 
+		  if(!Util.isNull(currentStr) && currentStr.length()>0
+				  && !Util.isNull(encryptedStr) && encryptedStr.length()>0){
+			  return BCrypt.checkpw(currentStr, encryptedStr);
+		  }
+		return false;
+	  }
 }

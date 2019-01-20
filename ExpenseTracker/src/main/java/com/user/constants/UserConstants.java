@@ -16,6 +16,10 @@ public final class UserConstants {
 
 	public static final String USER_SAVE_URL="/save";
 	
+	public static final String USER_AUTH_URL="/auth";
+	
+	public static final String USER_PRIMARY_EMAIL="primaryEmailId";
+	
 
 	
 

@@ -4,6 +4,7 @@
 package com.user.service;
 
 import com.user.request.UserAddRequest;
+import com.user.request.UserAuthRequest;
 import com.user.response.UserSaveResponse;
 
 /**
@@ -19,4 +20,12 @@ public interface IUserService {
 	 * @throws Exception 
 	 */
 	UserSaveResponse saveorUpdateUserDetails(UserAddRequest req) throws Exception;
+	
+	/**
+	 * Method to authenticate user login
+	 * @param req
+	 * @return
+	 * @throws Exception 
+	 */
+	boolean userAuth(UserAuthRequest req) throws Exception;
 }
