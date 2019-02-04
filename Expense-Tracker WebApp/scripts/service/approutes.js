@@ -10,7 +10,7 @@
          .when(
             "/login",{
                 templateUrl:"views/Login.html",
-                controller: '/scripts/controller/LoginCtrl.js'
+                Controller: 'controller/LoginCtrl'
             })
             .when(
                 "/about",{

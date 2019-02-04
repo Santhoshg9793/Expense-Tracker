@@ -1,8 +1,8 @@
-ExpenseApp.controller("LoginCtrl", userLogin);
-function userLogin($scope, $http,$location) {
+ExpenseApp.controller("LoginCtrl",[$scope, $http,$location,
+function ($scope, $http,$location) {
 
     console.log("inside function clock");
-    $scope.validuser = function () {     
+    $scope.userLogin = function () {     
         var data1 = {
             "userName": $scope.userName,
             "password": $scope.pwd
@@ -25,4 +25,4 @@ function userLogin($scope, $http,$location) {
               //  $location.path('/home');           
             });        
     };
-};
+}]);
