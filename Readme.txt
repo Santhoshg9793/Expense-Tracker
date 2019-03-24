@@ -4,6 +4,8 @@ SpringBoot Web Application
 
 ## Use a PostgreSQL database in a Spring Boot Web Application through Hibernate
 
+##Implemented swagger API documentation.
+-Run the application and go to http://localhost:8081/swagger-ui.html#/ to know about REST API services usage.
 
 ### Usage
 
