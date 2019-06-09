@@ -6,7 +6,6 @@ package com.user.dao;
 import org.hibernate.SessionFactory;
 
 import com.user.bean.UserBean;
-import com.user.request.UserAuthRequest;
 
 /**
  * @author Santhosh

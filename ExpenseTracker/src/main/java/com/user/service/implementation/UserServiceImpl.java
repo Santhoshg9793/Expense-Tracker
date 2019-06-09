@@ -29,13 +29,14 @@ public class UserServiceImpl implements IUserService {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-
+	
+	
 	/**
 	 * Method to save or update user details
 	 * 
 	 * @throws Exception
 	 */
-	@Override
+	@Override 
 	@Transactional(rollbackOn=Exception.class)
 	public UserSaveResponse saveorUpdateUserDetails(UserAddRequest req) throws Exception {
 		if (Util.isNull(req) || Util.isNull(req.getUserBean())) {

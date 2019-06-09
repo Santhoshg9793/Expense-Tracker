@@ -17,10 +17,15 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author Santhosh
  *
  */
+@Getter
+@Setter
 @Entity
 @Table(name="user" ,schema="taskmng")
 public class UserBean {
@@ -28,7 +33,7 @@ public class UserBean {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Integer id;
+	private Integer id; 
 
 	@NotEmpty(message = "First name cannot be null for a user")
 	@Pattern(regexp = "^.*[A-Za-z].*$", message = "User name cannot contain numbers and special characters.")
@@ -64,89 +69,5 @@ public class UserBean {
 	
 	@Column(name = "secret_key")
 	private String secretKey;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-
-
-	public Timestamp getCreatedTs() {
-		return createdTs;
-	}
-
-	public void setCreatedTs(Timestamp createdTs) {
-		this.createdTs = createdTs;
-	}
-
-	public Timestamp getUpdatedTs() {
-		return updatedTs;
-	}
-
-	public void setUpdatedTs(Timestamp updatedTs) {
-		this.updatedTs = updatedTs;
-	}
-
-	public Boolean getIsDeleted() {
-		return isDeleted;
-	}
-
-	public void setIsDeleted(Boolean isDeleted) {
-		this.isDeleted = isDeleted;
-	}
-
-	public String getSecretKey() {
-		return secretKey;
-	}
-
-	public void setSecretKey(String secretKey) {
-		this.secretKey = secretKey;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String getPrimaryEmailId() {
-		return primaryEmailId;
-	}
-
-	public void setPrimaryEmailId(String primaryEmailId) {
-		this.primaryEmailId = primaryEmailId;
-	}
-
-	public String getSecondaryEmailId() {
-		return secondaryEmailId;
-	}
-
-	public void setSecondaryEmailId(String secondaryEmailId) {
-		this.secondaryEmailId = secondaryEmailId;
-	}
 	
-	
-
 }
